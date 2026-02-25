@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Matrix bracket rendering using CSS borders */
+.matrix-bracket {
+  position: relative;
+  display: inline-flex;
+  padding: 12px 20px;
+}
+
+.matrix-bracket::before,
+.matrix-bracket::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  border: 2.5px solid #475569; /* slate-600 */
+  transition: border-color 0.3s;
+}
+
+.matrix-bracket::before {
+  left: 0;
+  border-right: none;
+  border-radius: 3px 0 0 3px;
+}
+
+.matrix-bracket::after {
+  right: 0;
+  border-left: none;
+  border-radius: 0 3px 3px 0;
+}
